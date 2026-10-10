@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Burger Hub | About Us</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================
+           ABOUT PAGE
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: #f7f7f7;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .about-header {
+            height: 76px;
+            background: #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .about-logo {
+            color: #fff;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .about-logo span {
+            color: #f5a623;
+        }
+
+        .about-nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .about-nav a {
+            color: #ddd;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .about-nav a:hover,
+        .about-nav a.active {
+            color: #f5a623;
+        }
+
+        .about-icons {
+            display: flex;
+            gap: 17px;
+            color: #fff;
+            font-size: 18px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .about-banner {
+            height: 440px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.68),
+                    rgba(0,0,0,.68)
+                ),
+                url("https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .banner-content {
+            max-width: 700px;
+            padding: 20px;
+        }
+
+        .banner-small {
+            color: #f5a623;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+        }
+
+        .banner-content h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin: 0 0 15px;
+            font-weight: 700;
+        }
+
+        .banner-content h1 span {
+            color: #f5a623;
+        }
+
+        .banner-content p {
+            color: #ddd;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           STORY SECTION
+        ========================================= */
+
+        .about-story {
+            background: #fff;
+
+            padding: 90px 10%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 65px;
+
+            align-items: center;
+        }
+
+        .story-images {
+            position: relative;
+            height: 470px;
+        }
+
+        .main-story-img {
+            width: 82%;
+            height: 390px;
+
+            object-fit: cover;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            border-radius: 3px;
+        }
+
+        .small-story-img {
+            width: 48%;
+            height: 190px;
+
+            object-fit: cover;
+
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            border: 8px solid white;
+            border-radius: 3px;
+        }
+
+        .experience-box {
+            position: absolute;
+
+            left: 20px;
+            bottom: 25px;
+
+            background: #f5a623;
+            color: #111;
+
+            padding: 15px 22px;
+
+            text-align: center;
+
+            border-radius: 2px;
+        }
+
+        .experience-box strong {
+            display: block;
+            font-size: 27px;
+        }
+
+        .experience-box span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .story-text .label {
+            color: #e59a13;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .story-text h2 {
+            font-size: 39px;
+            line-height: 1.25;
+            margin: 0 0 20px;
+        }
+
+        .story-text h2 span {
+            color: #f5a623;
+        }
+
+        .story-text p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+        }
+
+        .story-btn {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            background: #f5a623;
+            color: #111;
+
+            padding: 12px 25px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .story-btn:hover {
+            background: #111;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           STATS
+        ========================================= */
+
+        .stats {
+            background: #151515;
+
+            padding: 55px 10%;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+
+            text-align: center;
+        }
+
+        .stat {
+            border-right: 1px solid #333;
+        }
+
+        .stat:last-child {
+            border-right: none;
+        }
+
+        .stat h3 {
+            color: #f5a623;
+            font-size: 31px;
+            margin: 0 0 5px;
+        }
+
+        .stat p {
+            color: #aaa;
+            font-size: 11px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           WHY US
+        ========================================= */
+
+        .why-section {
+            background: #f5f5f5;
+
+            padding: 90px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title .label {
+            color: #e49a14;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 35px;
+            margin: 8px 0;
+        }
+
+        .section-title h2 span {
+            color: #f5a623;
+        }
+
+        .section-title p {
+            color: #777;
+            font-size: 13px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .why-card {
+            background: white;
+            padding: 35px 25px;
+
+            text-align: center;
+
+            border-bottom: 3px solid transparent;
+
+            transition: .35s;
+        }
+
+        .why-card:hover {
+            transform: translateY(-9px);
+
+            border-bottom-color: #f5a623;
+
+            box-shadow: 0 15px 35px rgba(0,0,0,.09);
+        }
+
+        .why-icon {
+            width: 65px;
+            height: 65px;
+
+            background: #fff5df;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 28px;
+
+            margin: 0 auto 18px;
+        }
+
+        .why-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .why-card p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           QUALITY SECTION
+        ========================================= */
+
+        .quality-section {
+            background: #111;
+            color: white;
+
+            padding: 90px 10%;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .quality-image img {
+            width: 100%;
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 3px;
+        }
+
+        .quality-content .label {
+            color: #f5a623;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .quality-content h2 {
+            font-size: 38px;
+            line-height: 1.3;
+
+            margin: 12px 0 18px;
+        }
+
+        .quality-content h2 span {
+            color: #f5a623;
+        }
+
+        .quality-content > p {
+            color: #aaa;
+
+            font-size: 13px;
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+        .quality-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .quality-list li {
+            margin-bottom: 15px;
+
+            color: #ddd;
+
+            font-size: 13px;
+        }
+
+        .quality-list li span {
+            color: #f5a623;
+            margin-right: 10px;
+        }
+
+
+        /* =========================================
+           CHEF SECTION
+        ========================================= */
+
+        .chef-section {
+            background: white;
+
+            padding: 90px 10%;
+        }
+
+        .chef-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .chef-image {
+            position: relative;
+        }
+
+        .chef-image img {
+            width: 100%;
+            height: 420px;
+
+            object-fit: cover;
+        }
+
+        .chef-badge {
+            position: absolute;
+
+            bottom: 20px;
+            left: 20px;
+
+            background: #f5a623;
+            color: #111;
+
+            padding: 12px 20px;
+
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .chef-text .label {
+            color: #e49a14;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .chef-text h2 {
+            font-size: 35px;
+
+            line-height: 1.3;
+
+            margin: 10px 0 18px;
+        }
+
+        .chef-text h2 span {
+            color: #f5a623;
+        }
+
+        .chef-text p {
+            color: #777;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           CTA
+        ========================================= */
+
+        .about-cta {
+            min-height: 300px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.72)
+                ),
+                url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 50px 20px;
+        }
+
+        .cta-content {
+            max-width: 650px;
+        }
+
+        .cta-content .label {
+            color: #f5a623;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .cta-content h2 {
+            font-size: 38px;
+
+            margin: 10px 0;
+        }
+
+        .cta-content p {
+            color: #ddd;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+
+            background: #f5a623;
+
+            color: #111;
+
+            padding: 12px 27px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .about-footer {
+            background: #0b0b0b;
+
+            color: white;
+
+            padding: 60px 10%;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-brand {
+            font-size: 21px;
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-brand span {
+            color: #f5a623;
+        }
+
+        .footer-column h3 {
+            color: #f5a623;
+
+            font-size: 14px;
+
+            margin-bottom: 17px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+
+            color: #888;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            margin-bottom: 7px;
+        }
+
+        .footer-column a:hover {
+            color: #f5a623;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 9px;
+        }
+
+        .social-icons span {
+            width: 32px;
+            height: 32px;
+
+            border: 1px solid #444;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #f5a623;
+
+            transition: .3s;
+        }
+
+        .social-icons span:hover {
+            background: #f5a623;
+            color: #111;
+        }
+
+        .copyright {
+            background: #070707;
+
+            color: #666;
+
+            text-align: center;
+
+            padding: 15px;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width: 900px) {
+
+            .about-header {
+                padding: 0 5%;
+            }
+
+            .about-nav {
+                gap: 15px;
+            }
+
+            .about-story,
+            .quality-section,
+            .chef-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .about-footer {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .about-nav {
+                display: none;
+            }
+
+            .about-banner {
+                height: 350px;
+            }
+
+            .banner-content h1 {
+                font-size: 42px;
+            }
+
+            .about-story,
+            .why-section,
+            .quality-section,
+            .chef-section {
+                padding: 60px 7%;
+            }
+
+            .story-images {
+                height: 380px;
+            }
+
+            .main-story-img {
+                height: 300px;
+            }
+
+            .small-story-img {
+                height: 150px;
+            }
+
+            .story-text h2,
+            .quality-content h2,
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                padding: 45px 7%;
+            }
+
+            .about-footer {
+                grid-template-columns: 1fr;
+                padding: 50px 7%;
+            }
+
+            .chef-image img {
+                height: 330px;
+            }
+
+            .cta-content h2 {
+                font-size: 29px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="about-header">
+
+    <div class="about-logo">
+        🍔 <span>Burger</span> Hub
+    </div>
+
+
+    <nav class="about-nav">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html" class="active">
+            About
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div class="about-icons">
+        <span>⌕</span>
+        <span>🛒</span>
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="about-banner">
+
+    <div class="banner-content">
+
+        <div class="banner-small">
+            WELCOME TO BURGER HUB
+        </div>
+
+        <h1>
+            We Make Every
+            <span>Bite Special</span>
+        </h1>
+
+        <p>
+            Discover our story, passion and commitment to
+            serving delicious burgers made with quality ingredients.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     STORY
+========================================= -->
+
+<section class="about-story">
+
+
+    <div class="story-images">
+
+        <img
+            class="main-story-img"
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+            alt="Burger">
+
+        <img
+            class="small-story-img"
+            src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=700&q=85"
+            alt="Burger">
+
+        <div class="experience-box">
+
+            <strong>10+</strong>
+
+            <span>
+                YEARS OF TASTE
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="story-text">
+
+        <div class="label">
+            OUR STORY
+        </div>
+
+        <h2>
+            Crafted With Passion,
+            <span>Served With Love</span>
+        </h2>
+
+        <p>
+            Burger Hub started with a simple dream:
+            to create delicious burgers that bring people
+            together.
+        </p>
+
+        <p>
+            We carefully select our ingredients and prepare
+            every burger with attention to taste, freshness
+            and quality.
+        </p>
+
+        <p>
+            From our classic burgers to our signature creations,
+            every bite is made to give you a memorable experience.
+        </p>
+
+        <a href="menu.html" class="story-btn">
+            Explore Our Menu →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     STATS
+========================================= -->
+
+<section class="stats">
+
+    <div class="stat">
+
+        <h3>10+</h3>
+
+        <p>
+            YEARS EXPERIENCE
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>25K+</h3>
+
+        <p>
+            HAPPY CUSTOMERS
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>30+</h3>
+
+        <p>
+            BURGER VARIETIES
+        </p>
+
+    </div>
+
+
+    <div class="stat">
+
+        <h3>4.9</h3>
+
+        <p>
+            CUSTOMER RATING
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY CHOOSE US
+========================================= -->
+
+<section class="why-section">
+
+
+    <div class="section-title">
+
+        <div class="label">
+            WHY BURGER HUB
+        </div>
+
+        <h2>
+            What Makes Us
+            <span>Different?</span>
+        </h2>
+
+        <p>
+            Quality ingredients, great taste and a whole lot of passion.
+        </p>
+
+    </div>
+
+
+
+    <div class="why-grid">
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🥬
+            </div>
+
+            <h3>
+                Fresh Ingredients
+            </h3>
+
+            <p>
+                We use carefully selected fresh ingredients
+                to create delicious and flavorful burgers.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                🔥
+            </div>
+
+            <h3>
+                Perfectly Grilled
+            </h3>
+
+            <p>
+                Every burger is freshly prepared and grilled
+                to create the perfect texture and taste.
+            </p>
+
+        </div>
+
+
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                ⭐
+            </div>
+
+            <h3>
+                Premium Quality
+            </h3>
+
+            <p>
+                From our buns to our sauces, we focus on
+                quality in every single detail.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     QUALITY
+========================================= -->
+
+<section class="quality-section">
+
+
+    <div class="quality-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=900&q=85"
+            alt="Fresh Burger">
+
+    </div>
+
+
+
+    <div class="quality-content">
+
+        <div class="label">
+            OUR PROMISE
+        </div>
+
+        <h2>
+            Quality You Can
+            <span>Taste</span>
+        </h2>
+
+        <p>
+            At Burger Hub, we don't just make food.
+            We create an experience. Our team works
+            every day to make sure your meal is fresh,
+            delicious and satisfying.
+        </p>
+
+
+        <ul class="quality-list">
+
+            <li>
+                <span>✓</span>
+                Freshly prepared burgers
+            </li>
+
+            <li>
+                <span>✓</span>
+                Premium quality ingredients
+            </li>
+
+            <li>
+                <span>✓</span>
+                Special homemade sauces
+            </li>
+
+            <li>
+                <span>✓</span>
+                Friendly customer service
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CHEF
+========================================= -->
+
+<section class="chef-section">
+
+
+    <div class="section-title">
+
+        <div class="label">
+            FROM OUR KITCHEN
+        </div>
+
+        <h2>
+            Made Fresh,
+            <span>Every Day</span>
+        </h2>
+
+        <p>
+            Passion and freshness behind every burger.
+        </p>
+
+    </div>
+
+
+
+    <div class="chef-grid">
+
+
+        <div class="chef-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=900&q=85"
+                alt="Burger Kitchen">
+
+            <div class="chef-badge">
+                🍔 Fresh From Our Kitchen
+            </div>
+
+        </div>
+
+
+
+        <div class="chef-text">
+
+            <div class="label">
+                OUR KITCHEN
+            </div>
+
+            <h2>
+                Simple Ingredients,
+                <span>Big Flavor</span>
+            </h2>
+
+            <p>
+                Our kitchen is where the magic happens.
+                From preparing our fresh patties to adding
+                the final touch of our signature sauces,
+                every step is handled with care.
+            </p>
+
+            <p>
+                We believe great food doesn't need to be
+                complicated. It just needs fresh ingredients,
+                good technique and plenty of passion.
+            </p>
+
+            <a href="menu.html" class="story-btn">
+                See Our Burgers →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CTA
+========================================= -->
+
+<section class="about-cta">
+
+    <div class="cta-content">
+
+        <div class="label">
+            READY TO TASTE THE DIFFERENCE?
+        </div>
+
+        <h2>
+            Your Next Favorite Burger
+            Is Waiting!
+        </h2>
+
+        <p>
+            Explore our menu and discover your perfect bite.
+        </p>
+
+        <a href="menu.html" class="cta-btn">
+            Explore Menu →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="about-footer">
+
+
+    <div class="footer-column">
+
+        <div class="footer-brand">
+            🍔 <span>Burger</span> Hub
+        </div>
+
+        <p>
+            Fresh burgers, great taste and unforgettable
+            bites. Your favorite destination for delicious food.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            QUICK LINKS
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            CONTACT US
+        </h3>
+
+        <p>
+            📍 Multan, Pakistan
+        </p>
+
+        <p>
+            📞 +92 300 1234567
+        </p>
+
+        <p>
+            ✉ burgerhub@email.com
+        </p>
+
+        <p>
+            🕐 Mon - Sun: 11AM - 11PM
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            FOLLOW US
+        </h3>
+
+        <div class="social-icons">
+
+            <span>f</span>
+            <span>◎</span>
+            <span>𝕏</span>
+
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+<div class="copyright">
+
+    © 2026 Burger Hub. All Rights Reserved.
+
+</div>
+
+
+</body>
+</html>

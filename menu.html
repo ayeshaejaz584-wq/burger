@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Burger Hub | Menu</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f6f6f6;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        .header {
+            height: 76px;
+            background: #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #f4a51c;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar a {
+            color: #ddd;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #f4a51c;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 18px;
+            color: white;
+            font-size: 18px;
+        }
+
+
+        /* =========================
+           MENU HERO
+        ========================= */
+
+        .menu-hero {
+            min-height: 410px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.70),
+                    rgba(0,0,0,.70)
+                ),
+                url("https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+        }
+
+        .menu-hero-content {
+            max-width: 700px;
+        }
+
+        .menu-label {
+            color: #f4a51c;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .menu-hero h1 {
+            font-size: 56px;
+            margin-bottom: 12px;
+        }
+
+        .menu-hero h1 span {
+            color: #f4a51c;
+        }
+
+        .menu-hero p {
+            color: #ddd;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           MENU INTRO
+        ========================= */
+
+        .menu-intro {
+            background: white;
+            text-align: center;
+            padding: 65px 10% 45px;
+        }
+
+        .menu-intro .label {
+            color: #e59a13;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .menu-intro h2 {
+            font-size: 34px;
+            margin: 8px 0 10px;
+        }
+
+        .menu-intro h2 span {
+            color: #f4a51c;
+        }
+
+        .menu-intro p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           CATEGORY NAVIGATION
+        ========================= */
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+
+            background: white;
+
+            padding: 0 10% 50px;
+        }
+
+        .menu-tabs a {
+            padding: 10px 23px;
+
+            border: 1px solid #ddd;
+
+            color: #555;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .menu-tabs a:hover,
+        .menu-tabs a.active {
+            background: #f4a51c;
+            border-color: #f4a51c;
+            color: #111;
+        }
+
+
+        /* =========================
+           MENU SECTION
+        ========================= */
+
+        .menu-section {
+            padding: 75px 10%;
+            background: #f5f5f5;
+        }
+
+        .category-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .category-title .label {
+            color: #e49a14;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .category-title h2 {
+            font-size: 31px;
+            margin-top: 7px;
+        }
+
+        .category-title h2 span {
+            color: #f4a51c;
+        }
+
+
+        /* =========================
+           FOOD GRID
+        ========================= */
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .food-card {
+            background: white;
+            overflow: hidden;
+
+            position: relative;
+
+            transition: .35s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,.10);
+        }
+
+        .food-image {
+            height: 230px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .food-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .food-card:hover .food-image img {
+            transform: scale(1.08);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            background: #f4a51c;
+            color: #111;
+
+            padding: 6px 12px;
+
+            font-size: 9px;
+            font-weight: 700;
+
+            letter-spacing: .5px;
+        }
+
+        .food-content {
+            padding: 21px;
+        }
+
+        .food-content h3 {
+            font-size: 18px;
+            margin-bottom: 7px;
+        }
+
+        .food-content p {
+            color: #777;
+            font-size: 11px;
+            line-height: 1.7;
+
+            min-height: 40px;
+        }
+
+        .food-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-top: 17px;
+        }
+
+        .price {
+            color: #e29a12;
+            font-size: 17px;
+            font-weight: 700;
+        }
+
+        .order-btn {
+            background: #111;
+            color: white;
+
+            padding: 8px 16px;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            transition: .3s;
+        }
+
+        .order-btn:hover {
+            background: #f4a51c;
+            color: #111;
+        }
+
+
+        /* =========================
+           BURGER SECTION
+        ========================= */
+
+        #burgers {
+            background: white;
+        }
+
+
+        /* =========================
+           SNACKS
+        ========================= */
+
+        #snacks {
+            background: #f5f5f5;
+        }
+
+
+        /* =========================
+           BEVERAGES
+        ========================= */
+
+        #beverages {
+            background: white;
+        }
+
+
+        /* =========================
+           SPECIAL DEAL
+        ========================= */
+
+        .deal {
+            margin: 0;
+
+            min-height: 330px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.74),
+                    rgba(0,0,0,.74)
+                ),
+                url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        .deal-content {
+            max-width: 650px;
+        }
+
+        .deal-content .label {
+            color: #f4a51c;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .deal-content h2 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .deal-content p {
+            color: #ddd;
+            font-size: 13px;
+            margin-bottom: 22px;
+        }
+
+        .deal-btn {
+            display: inline-block;
+
+            background: #f4a51c;
+            color: #111;
+
+            padding: 12px 27px;
+
+            font-size: 12px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .deal-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+            background: #0b0b0b;
+            color: white;
+
+            padding: 60px 10%;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 21px;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #f4a51c;
+        }
+
+        .footer-column h3 {
+            color: #f4a51c;
+            font-size: 14px;
+            margin-bottom: 17px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+            color: #888;
+            font-size: 11px;
+            line-height: 1.8;
+            margin-bottom: 7px;
+        }
+
+        .footer-column a:hover {
+            color: #f4a51c;
+        }
+
+        .socials {
+            display: flex;
+            gap: 9px;
+        }
+
+        .socials span {
+            width: 32px;
+            height: 32px;
+
+            border: 1px solid #444;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #f4a51c;
+
+            transition: .3s;
+        }
+
+        .socials span:hover {
+            background: #f4a51c;
+            color: #111;
+        }
+
+        .copyright {
+            background: #070707;
+            color: #666;
+
+            text-align: center;
+
+            padding: 15px;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 900px) {
+
+            .navbar {
+                gap: 15px;
+            }
+
+            .food-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                display: none;
+            }
+
+            .menu-hero {
+                min-height: 350px;
+            }
+
+            .menu-hero h1 {
+                font-size: 42px;
+            }
+
+            .menu-section {
+                padding: 60px 7%;
+            }
+
+            .food-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-tabs {
+                flex-wrap: wrap;
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+                padding: 50px 7%;
+            }
+
+            .deal-content h2 {
+                font-size: 29px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- =================================
+     HEADER
+================================= -->
+
+<header class="header">
+
+    <div class="logo">
+        🍔 <span>Burger</span> Hub
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="menu.html" class="active">
+            Menu
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div class="header-icons">
+        <span>⌕</span>
+        <span>🛒</span>
+    </div>
+
+</header>
+
+
+
+<!-- =================================
+     MENU HERO
+================================= -->
+
+<section class="menu-hero">
+
+    <div class="menu-hero-content">
+
+        <div class="menu-label">
+            BURGER HUB MENU
+        </div>
+
+        <h1>
+            Our Delicious
+            <span>Menu</span>
+        </h1>
+
+        <p>
+            Freshly prepared burgers, crispy snacks and refreshing
+            beverages made to satisfy every craving.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     INTRO
+================================= -->
+
+<section class="menu-intro">
+
+    <div class="label">
+        EXPLORE OUR MENU
+    </div>
+
+    <h2>
+        Something Delicious
+        <span>For Everyone</span>
+    </h2>
+
+    <p>
+        Choose from our selection of fresh burgers,
+        tasty snacks and refreshing drinks.
+    </p>
+
+</section>
+
+
+
+<!-- =================================
+     TABS
+================================= -->
+
+<div class="menu-tabs">
+
+    <a href="#burgers" class="active">
+        🍔 Burgers
+    </a>
+
+    <a href="#snacks">
+        🍟 Snacks
+    </a>
+
+    <a href="#beverages">
+        🥤 Beverages
+    </a>
+
+</div>
+
+
+
+<!-- =================================
+     BURGERS
+================================= -->
+
+<section class="menu-section" id="burgers">
+
+    <div class="category-title">
+
+        <div class="label">
+            OUR SPECIAL BURGERS
+        </div>
+
+        <h2>
+            Juicy <span>Burgers</span>
+        </h2>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+        <!-- Burger 1 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    BEST SELLER
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=85"
+                    alt="Classic Burger">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Classic Burger
+                </h3>
+
+                <p>
+                    Juicy beef patty with fresh lettuce,
+                    tomato, cheese and special sauce.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 599
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Burger 2 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    POPULAR
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=85"
+                    alt="Cheese Burger">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Double Cheese
+                </h3>
+
+                <p>
+                    Double beef patties, melted cheese,
+                    crispy lettuce and signature sauce.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 749
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Burger 3 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=800&q=85"
+                    alt="Chicken Burger">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Crispy Chicken
+                </h3>
+
+                <p>
+                    Crispy chicken fillet with fresh lettuce,
+                    cheese and creamy mayo.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 649
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Burger 4 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=85"
+                    alt="BBQ Burger">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    BBQ Beef Burger
+                </h3>
+
+                <p>
+                    Grilled beef patty with smoky BBQ sauce,
+                    onions and melted cheese.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 699
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Burger 5 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    SPECIAL
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?auto=format&fit=crop&w=800&q=85"
+                    alt="Hub Special">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Hub Special
+                </h3>
+
+                <p>
+                    Our signature burger loaded with cheese,
+                    beef, vegetables and special sauce.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 799
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Burger 6 -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?auto=format&fit=crop&w=800&q=85"
+                    alt="Spicy Burger">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Spicy Crunch
+                </h3>
+
+                <p>
+                    Spicy crispy chicken with jalapeños,
+                    cheese and hot special sauce.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 699
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     SNACKS
+================================= -->
+
+<section class="menu-section" id="snacks">
+
+    <div class="category-title">
+
+        <div class="label">
+            PERFECT SIDE DISHES
+        </div>
+
+        <h2>
+            Crispy <span>Snacks</span>
+        </h2>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+        <!-- Fries -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    POPULAR
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=800&q=85"
+                    alt="French Fries">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Classic Fries
+                </h3>
+
+                <p>
+                    Golden crispy fries lightly seasoned
+                    and served fresh.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 249
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Nuggets -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=85"
+                    alt="Chicken Nuggets">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Chicken Nuggets
+                </h3>
+
+                <p>
+                    Crispy golden chicken nuggets with
+                    your favorite dipping sauce.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 399
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Loaded Fries -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    SPECIAL
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?auto=format&fit=crop&w=800&q=85"
+                    alt="Loaded Fries">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Loaded Fries
+                </h3>
+
+                <p>
+                    Crispy fries topped with cheese,
+                    sauces and delicious toppings.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 449
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     BEVERAGES
+================================= -->
+
+<section class="menu-section" id="beverages">
+
+    <div class="category-title">
+
+        <div class="label">
+            REFRESH YOURSELF
+        </div>
+
+        <h2>
+            Fresh <span>Beverages</span>
+        </h2>
+
+    </div>
+
+
+    <div class="food-grid">
+
+
+        <!-- Cola -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1629203851122-3726ecdf080e?auto=format&fit=crop&w=800&q=85"
+                    alt="Cold Drink">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Chilled Cola
+                </h3>
+
+                <p>
+                    Ice-cold refreshing cola served
+                    perfectly chilled.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 149
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Lemon Drink -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <img
+                    src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=85"
+                    alt="Lemon Drink">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Fresh Lemon Drink
+                </h3>
+
+                <p>
+                    Cool and refreshing lemon drink
+                    with a fresh citrus taste.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 199
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Milkshake -->
+
+        <div class="food-card">
+
+            <div class="food-image">
+
+                <span class="popular-tag">
+                    FAVORITE
+                </span>
+
+                <img
+                    src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=800&q=85"
+                    alt="Milkshake">
+
+            </div>
+
+            <div class="food-content">
+
+                <h3>
+                    Chocolate Shake
+                </h3>
+
+                <p>
+                    Creamy chocolate shake with
+                    a rich and smooth flavor.
+                </p>
+
+                <div class="food-bottom">
+
+                    <div class="price">
+                        Rs. 349
+                    </div>
+
+                    <a href="contact.html" class="order-btn">
+                        Order Now
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     DEAL
+================================= -->
+
+<section class="deal">
+
+    <div class="deal-content">
+
+        <div class="label">
+            BURGER HUB SPECIAL
+        </div>
+
+        <h2>
+            Make Your Meal
+            Extra Delicious!
+        </h2>
+
+        <p>
+            Pick your favorite burger, add crispy fries
+            and complete your meal with a refreshing drink.
+        </p>
+
+        <a href="contact.html" class="deal-btn">
+            Order Your Meal →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer class="footer">
+
+
+    <div class="footer-column">
+
+        <div class="footer-logo">
+            🍔 <span>Burger</span> Hub
+        </div>
+
+        <p>
+            Fresh burgers, great taste and unforgettable
+            bites. Your favorite destination for delicious food.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            QUICK LINKS
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            CONTACT
+        </h3>
+
+        <p>
+            📍 Multan, Pakistan
+        </p>
+
+        <p>
+            📞 +92 300 1234567
+        </p>
+
+        <p>
+            ✉ burgerhub@email.com
+        </p>
+
+        <p>
+            🕐 11:00 AM - 11:00 PM
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            FOLLOW US
+        </h3>
+
+        <div class="socials">
+
+            <span>f</span>
+            <span>◎</span>
+            <span>𝕏</span>
+
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+<div class="copyright">
+
+    © 2026 Burger Hub. All Rights Reserved.
+
+</div>
+
+
+</body>
+</html>

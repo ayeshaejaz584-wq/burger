@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Burger Hub | Contact</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* =====================================
+           RESET
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f6f6f6;
+            color: #222;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =====================================
+           HEADER
+        ===================================== */
+
+        .header {
+            height: 76px;
+            background: #111;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 8%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: 600;
+        }
+
+        .logo span {
+            color: #f4a51c;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 32px;
+        }
+
+        .navbar a {
+            color: #ddd;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #f4a51c;
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 18px;
+            color: white;
+            font-size: 18px;
+        }
+
+
+        /* =====================================
+           CONTACT HERO
+        ===================================== */
+
+        .contact-hero {
+            min-height: 410px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.72),
+                    rgba(0,0,0,.72)
+                ),
+                url("https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .contact-hero-content {
+            max-width: 700px;
+        }
+
+        .hero-label {
+            color: #f4a51c;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact-hero h1 {
+            font-size: 56px;
+            margin-bottom: 12px;
+        }
+
+        .contact-hero h1 span {
+            color: #f4a51c;
+        }
+
+        .contact-hero p {
+            color: #ddd;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           CONTACT INTRO
+        ===================================== */
+
+        .contact-intro {
+            background: white;
+
+            text-align: center;
+
+            padding: 70px 10% 45px;
+        }
+
+        .contact-intro .label {
+            color: #e49a14;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .contact-intro h2 {
+            font-size: 34px;
+            margin: 8px 0 10px;
+        }
+
+        .contact-intro h2 span {
+            color: #f4a51c;
+        }
+
+        .contact-intro p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* =====================================
+           CONTACT CARDS
+        ===================================== */
+
+        .contact-cards {
+            background: white;
+
+            padding: 20px 10% 75px;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .contact-card {
+            background: #f7f7f7;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-bottom: 3px solid transparent;
+
+            transition: .35s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-7px);
+
+            border-bottom-color: #f4a51c;
+
+            background: white;
+
+            box-shadow: 0 12px 30px rgba(0,0,0,.08);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+
+            background: #fff1d4;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 25px;
+
+            margin: 0 auto 15px;
+        }
+
+        .contact-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #777;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================
+           CONTACT MAIN
+        ===================================== */
+
+        .contact-main {
+            background: #f5f5f5;
+
+            padding: 85px 10%;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1.2fr;
+
+            gap: 50px;
+
+            align-items: stretch;
+        }
+
+
+        /* =====================================
+           LEFT INFO
+        ===================================== */
+
+        .contact-info {
+            background: #151515;
+
+            color: white;
+
+            padding: 45px 40px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .contact-info::after {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border: 35px solid rgba(244,165,28,.08);
+
+            border-radius: 50%;
+
+            right: -70px;
+            bottom: -70px;
+        }
+
+        .contact-info .label {
+            color: #f4a51c;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .contact-info h2 {
+            font-size: 32px;
+
+            line-height: 1.3;
+
+            margin: 10px 0 15px;
+        }
+
+        .contact-info h2 span {
+            color: #f4a51c;
+        }
+
+        .contact-info > p {
+            color: #aaa;
+
+            font-size: 12px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* INFO ITEMS */
+
+        .info-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 15px;
+
+            margin-bottom: 23px;
+        }
+
+        .info-icon {
+            width: 38px;
+            height: 38px;
+
+            flex-shrink: 0;
+
+            background: #f4a51c;
+
+            color: #111;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 16px;
+        }
+
+        .info-text h4 {
+            font-size: 12px;
+
+            margin-bottom: 3px;
+        }
+
+        .info-text p {
+            color: #999;
+
+            font-size: 10px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================
+           SOCIAL
+        ===================================== */
+
+        .contact-social {
+            margin-top: 30px;
+        }
+
+        .contact-social h4 {
+            font-size: 12px;
+
+            margin-bottom: 12px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 9px;
+        }
+
+        .social-icons span {
+            width: 32px;
+            height: 32px;
+
+            border: 1px solid #444;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #f4a51c;
+
+            transition: .3s;
+        }
+
+        .social-icons span:hover {
+            background: #f4a51c;
+            color: #111;
+        }
+
+
+        /* =====================================
+           FORM
+        ===================================== */
+
+        .contact-form {
+            background: white;
+
+            padding: 45px 40px;
+
+            box-shadow: 0 8px 25px rgba(0,0,0,.05);
+        }
+
+        .contact-form .label {
+            color: #e49a14;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .contact-form h2 {
+            font-size: 30px;
+
+            margin: 8px 0 25px;
+        }
+
+        .contact-form h2 span {
+            color: #f4a51c;
+        }
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 17px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+
+            color: #444;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+
+            border: 1px solid #ddd;
+
+            outline: none;
+
+            padding: 12px 13px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 11px;
+
+            background: #fafafa;
+
+            transition: .3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f4a51c;
+
+            background: white;
+        }
+
+        .form-group textarea {
+            height: 120px;
+
+            resize: none;
+        }
+
+        .send-btn {
+            border: none;
+
+            background: #f4a51c;
+
+            color: #111;
+
+            padding: 13px 28px;
+
+            font-family: "Poppins", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .send-btn:hover {
+            background: #111;
+
+            color: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================
+           LOCATION
+        ===================================== */
+
+        .location-section {
+            background: white;
+
+            padding: 80px 10%;
+        }
+
+        .location-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .location-title .label {
+            color: #e49a14;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .location-title h2 {
+            font-size: 33px;
+
+            margin-top: 8px;
+        }
+
+        .location-title h2 span {
+            color: #f4a51c;
+        }
+
+        .location-box {
+            height: 300px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.58),
+                    rgba(0,0,0,.58)
+                ),
+                url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1500&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .location-content {
+            background: rgba(15,15,15,.90);
+
+            padding: 30px 45px;
+
+            border-top: 3px solid #f4a51c;
+        }
+
+        .location-content .pin {
+            font-size: 28px;
+
+            margin-bottom: 8px;
+        }
+
+        .location-content h3 {
+            font-size: 20px;
+
+            margin-bottom: 5px;
+        }
+
+        .location-content p {
+            color: #bbb;
+
+            font-size: 11px;
+
+            margin-bottom: 15px;
+        }
+
+        .map-btn {
+            display: inline-block;
+
+            background: #f4a51c;
+
+            color: #111;
+
+            padding: 9px 18px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .map-btn:hover {
+            background: white;
+        }
+
+
+        /* =====================================
+           ORDER CTA
+        ===================================== */
+
+        .order-cta {
+            min-height: 310px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.75),
+                    rgba(0,0,0,.75)
+                ),
+                url("https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 50px 20px;
+        }
+
+        .order-content {
+            max-width: 650px;
+        }
+
+        .order-content .label {
+            color: #f4a51c;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .order-content h2 {
+            font-size: 37px;
+
+            margin: 10px 0;
+        }
+
+        .order-content p {
+            color: #ddd;
+
+            font-size: 13px;
+
+            margin-bottom: 22px;
+        }
+
+        .order-btn {
+            display: inline-block;
+
+            background: #f4a51c;
+
+            color: #111;
+
+            padding: 12px 27px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .order-btn:hover {
+            background: white;
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================
+           FOOTER
+        ===================================== */
+
+        .footer {
+            background: #0b0b0b;
+
+            color: white;
+
+            padding: 60px 10%;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1.5fr 1fr;
+
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 21px;
+
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-logo span {
+            color: #f4a51c;
+        }
+
+        .footer-column h3 {
+            color: #f4a51c;
+
+            font-size: 14px;
+
+            margin-bottom: 17px;
+        }
+
+        .footer-column p,
+        .footer-column a {
+            display: block;
+
+            color: #888;
+
+            font-size: 11px;
+
+            line-height: 1.8;
+
+            margin-bottom: 7px;
+        }
+
+        .footer-column a:hover {
+            color: #f4a51c;
+        }
+
+
+        /* =====================================
+           COPYRIGHT
+        ===================================== */
+
+        .copyright {
+            background: #070707;
+
+            color: #666;
+
+            text-align: center;
+
+            padding: 15px;
+
+            font-size: 10px;
+        }
+
+
+        /* =====================================
+           RESPONSIVE
+        ===================================== */
+
+        @media(max-width: 900px) {
+
+            .navbar {
+                gap: 15px;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-main {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .navbar {
+                display: none;
+            }
+
+            .contact-hero {
+                min-height: 350px;
+            }
+
+            .contact-hero h1 {
+                font-size: 42px;
+            }
+
+            .contact-intro {
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            .contact-cards {
+                grid-template-columns: 1fr;
+
+                padding-left: 7%;
+                padding-right: 7%;
+            }
+
+            .contact-main {
+                padding: 60px 7%;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 35px 25px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .location-section {
+                padding: 60px 7%;
+            }
+
+            .location-content {
+                padding: 25px;
+            }
+
+            .footer {
+                grid-template-columns: 1fr;
+
+                padding: 50px 7%;
+            }
+
+            .order-content h2 {
+                font-size: 29px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="logo">
+        🍔 <span>Burger</span> Hub
+    </div>
+
+
+    <nav class="navbar">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="contact.html" class="active">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <div class="header-icons">
+        <span>⌕</span>
+        <span>🛒</span>
+    </div>
+
+</header>
+
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="contact-hero">
+
+    <div class="contact-hero-content">
+
+        <div class="hero-label">
+            GET IN TOUCH
+        </div>
+
+        <h1>
+            Contact <span>Us</span>
+        </h1>
+
+        <p>
+            Have a question, want to place an order,
+            or simply want to say hello?
+            We'd love to hear from you.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     INTRO
+===================================== -->
+
+<section class="contact-intro">
+
+    <div class="label">
+        WE ARE HERE FOR YOU
+    </div>
+
+    <h2>
+        Let's Talk About
+        <span>Food</span>
+    </h2>
+
+    <p>
+        Reach out to Burger Hub and we'll be happy to help.
+    </p>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTACT CARDS
+===================================== -->
+
+<section class="contact-cards">
+
+
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            📍
+        </div>
+
+        <h3>
+            Visit Us
+        </h3>
+
+        <p>
+            Main Food Street,<br>
+            Multan, Pakistan
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            📞
+        </div>
+
+        <h3>
+            Call Us
+        </h3>
+
+        <p>
+            +92 300 1234567<br>
+            +92 321 7654321
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-card">
+
+        <div class="contact-icon">
+            ✉
+        </div>
+
+        <h3>
+            Email Us
+        </h3>
+
+        <p>
+            burgerhub@email.com<br>
+            support@burgerhub.com
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================
+     CONTACT MAIN
+===================================== -->
+
+<section class="contact-main">
+
+
+    <!-- LEFT -->
+
+    <div class="contact-info">
+
+        <div class="label">
+            CONTACT INFORMATION
+        </div>
+
+        <h2>
+            We'd Love To
+            <span>Hear From You</span>
+        </h2>
+
+        <p>
+            Whether you have a question about our menu,
+            want to place an order or need help,
+            our team is ready to assist you.
+        </p>
+
+
+        <!-- Address -->
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                📍
+            </div>
+
+            <div class="info-text">
+
+                <h4>
+                    Our Location
+                </h4>
+
+                <p>
+                    Main Food Street,<br>
+                    Multan, Pakistan
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Phone -->
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                ☎
+            </div>
+
+            <div class="info-text">
+
+                <h4>
+                    Phone Number
+                </h4>
+
+                <p>
+                    +92 300 1234567<br>
+                    +92 321 7654321
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Email -->
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                ✉
+            </div>
+
+            <div class="info-text">
+
+                <h4>
+                    Email Address
+                </h4>
+
+                <p>
+                    burgerhub@email.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Hours -->
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                🕐
+            </div>
+
+            <div class="info-text">
+
+                <h4>
+                    Opening Hours
+                </h4>
+
+                <p>
+                    Monday - Sunday<br>
+                    11:00 AM - 11:00 PM
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Social -->
+
+        <div class="contact-social">
+
+            <h4>
+                Follow Us
+            </h4>
+
+            <div class="social-icons">
+
+                <span>f</span>
+                <span>◎</span>
+                <span>𝕏</span>
+                <span>▶</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- RIGHT FORM -->
+
+    <div class="contact-form">
+
+        <div class="label">
+            SEND US A MESSAGE
+        </div>
+
+        <h2>
+            Get In <span>Touch</span>
+        </h2>
+
+
+        <form>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="tel"
+                        placeholder="Enter your phone"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Subject
+                    </label>
+
+                    <select>
+
+                        <option>
+                            Select Subject
+                        </option>
+
+                        <option>
+                            Food Order
+                        </option>
+
+                        <option>
+                            General Question
+                        </option>
+
+                        <option>
+                            Feedback
+                        </option>
+
+                        <option>
+                            Complaint
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label>
+                    Your Message
+                </label>
+
+                <textarea
+                    placeholder="Write your message here..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="send-btn"
+            >
+                Send Message →
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     LOCATION
+===================================== -->
+
+<section class="location-section">
+
+    <div class="location-title">
+
+        <div class="label">
+            FIND US
+        </div>
+
+        <h2>
+            Visit Our
+            <span>Location</span>
+        </h2>
+
+    </div>
+
+
+    <div class="location-box">
+
+        <div class="location-content">
+
+            <div class="pin">
+                📍
+            </div>
+
+            <h3>
+                Burger Hub
+            </h3>
+
+            <p>
+                Main Food Street, Multan, Pakistan
+            </p>
+
+            <a href="#" class="map-btn">
+                Get Directions →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     CTA
+===================================== -->
+
+<section class="order-cta">
+
+    <div class="order-content">
+
+        <div class="label">
+            HUNGRY ALREADY?
+        </div>
+
+        <h2>
+            Your Perfect Burger
+            Is Just A Click Away!
+        </h2>
+
+        <p>
+            Explore our delicious menu and choose
+            your favorite meal today.
+        </p>
+
+        <a href="menu.html" class="order-btn">
+            Explore Menu →
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer class="footer">
+
+
+    <div class="footer-column">
+
+        <div class="footer-logo">
+            🍔 <span>Burger</span> Hub
+        </div>
+
+        <p>
+            Fresh burgers, great taste and unforgettable
+            bites. Your favorite destination for delicious food.
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            QUICK LINKS
+        </h3>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="menu.html">
+            Menu
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            CONTACT
+        </h3>
+
+        <p>
+            📍 Multan, Pakistan
+        </p>
+
+        <p>
+            📞 +92 300 1234567
+        </p>
+
+        <p>
+            ✉ burgerhub@email.com
+        </p>
+
+        <p>
+            🕐 11:00 AM - 11:00 PM
+        </p>
+
+    </div>
+
+
+
+    <div class="footer-column">
+
+        <h3>
+            FOLLOW US
+        </h3>
+
+        <div class="social-icons">
+
+            <span>f</span>
+            <span>◎</span>
+            <span>𝕏</span>
+            <span>▶</span>
+
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+
+<div class="copyright">
+
+    © 2026 Burger Hub. All Rights Reserved.
+
+</div>
+
+
+</body>
+</html>
